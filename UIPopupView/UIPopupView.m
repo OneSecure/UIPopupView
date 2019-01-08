@@ -42,7 +42,9 @@
 
     CGPoint startCenter = CGPointMake(width/2, height/2);
     CGPoint endCenter = CGPointMake(width/2, height/2);
-    CGContextDrawRadialGradient(UIGraphicsGetCurrentContext(), backgroundGradient, startCenter, 0, endCenter, width, 0);
+    CGFloat startRadius = 0.0f;
+    CGFloat endRadius = sqrt(width*width + height*height) / 2.0f;
+    CGContextDrawRadialGradient(UIGraphicsGetCurrentContext(), backgroundGradient, startCenter, startRadius, endCenter, endRadius, 0);
 
     CGGradientRelease(backgroundGradient);
 }
